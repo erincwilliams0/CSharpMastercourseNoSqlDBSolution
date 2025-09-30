@@ -1,6 +1,5 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
-using NPOI.SS.Formula.Functions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +11,9 @@ namespace DataAccessLibrary
     public class MongoDBDataAccess
     {
         private IMongoDatabase db;
-        public MongoDBDataAccess(string dbName, string connectionString)
+        public MongoDBDataAccess(string dbName, MongoClientSettings settings)
         {
-            var client = new MongoClient(connectionString);
+            var client = new MongoClient(settings);
             db = client.GetDatabase(dbName);
 
         }
@@ -39,15 +38,27 @@ namespace DataAccessLibrary
             return collection.Find(filter).First();
         }
 
+        //public void UpsertRecord<T>(string table, Guid id, T record)
+        //{
+        //    var collection = db.GetCollection<T>(table);
+
+
+        //    var result = collection.ReplaceOne(
+        //        new BsonDocument(),
+        //        record,
+        //        new ReplaceOptions { IsUpsert = true });
+        //}
+
         public void UpsertRecord<T>(string table, Guid id, T record)
         {
             var collection = db.GetCollection<T>(table);
 
+            var filter = Builders<T>.Filter.Eq("_id", id);
 
-            var result = collection.ReplaceOne(
-                new BsonDocument("_id", BsonValue.Create(id)),
+            var result = collection.FindOneAndReplace(
+                filter,
                 record,
-                new ReplaceOptions { IsUpsert = true });
+                new FindOneAndReplaceOptions<T> { IsUpsert = true, ReturnDocument = ReturnDocument.After });
         }
 
         public void DeleteRecord<T>(string table, Guid id)
