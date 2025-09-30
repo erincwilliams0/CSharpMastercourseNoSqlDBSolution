@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace DataAccessLibrary
 {
-    public class MongoDBDataAccesscs
+    public class MongoDBDataAccess
     {
         private IMongoDatabase db;
-        public MongoDBDataAccesscs(string dbName, string connectionString)
+        public MongoDBDataAccess(string dbName, string connectionString)
         {
             var client = new MongoClient(connectionString);
             db = client.GetDatabase(dbName);
