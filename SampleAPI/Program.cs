@@ -1,4 +1,8 @@
 
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
+
 namespace SampleAPI
 {
     public class Program
@@ -27,6 +31,8 @@ namespace SampleAPI
 
 
             app.MapControllers();
+
+            BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
 
             app.Run();
         }
