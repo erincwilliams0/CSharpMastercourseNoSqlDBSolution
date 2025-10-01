@@ -13,19 +13,20 @@ namespace SampleAPI.Controllers
     [ApiController]
     public class ContactsController : ControllerBase
     {
-        private IConfiguration _config;
         private static MongoDBDataAccess db;
         private static readonly string tableName = "Contacts";
 
 
-        public ContactsController(IConfiguration config)
+        public ContactsController(MongoDBDataAccess database)
         {
-            //BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
-            _config = config;
-            MongoClientSettings settings = MongoClientSettings.FromConnectionString(_config.GetConnectionString("Default"));
+            //_config = config;
+            ////BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
+            //MongoClientSettings settings = MongoClientSettings.FromConnectionString(_config.GetConnectionString("Default"));
 
 
-            db = new MongoDBDataAccess("MongoContactsDb", settings);
+            db = database;
+
+
         }
 
         [HttpGet]
