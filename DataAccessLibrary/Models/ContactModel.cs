@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace DataAccessLibrary.Models
@@ -10,6 +11,7 @@ namespace DataAccessLibrary.Models
     public class ContactModel
     {
         [BsonId]
+        [JsonPropertyName("id")]
         public Guid Id { get; set; } = Guid.NewGuid();
         public string FirstName { get; set; }
         public string LastName { get; set; }
