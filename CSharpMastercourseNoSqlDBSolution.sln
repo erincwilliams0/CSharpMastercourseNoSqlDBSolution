@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9 d17.14
+VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBUI", "MongoDBUI\MongoDBUI.csproj", "{3D2B043C-9420-47B8-959F-BC8CC1C62D75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLibrary", "DataAccessLibrary\DataAccessLibrary.csproj", "{D56AD06D-2BBC-4437-8853-E5347C9BEA9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleAPI", "SampleAPI\SampleAPI.csproj", "{0FB64293-C4CF-4D63-B467-EA928FC384AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiDBUI", "ApiDBUI\ApiDBUI.csproj", "{8DE189A9-360C-440A-AA75-2A8CEABC73D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{D56AD06D-2BBC-4437-8853-E5347C9BEA9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D56AD06D-2BBC-4437-8853-E5347C9BEA9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D56AD06D-2BBC-4437-8853-E5347C9BEA9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FB64293-C4CF-4D63-B467-EA928FC384AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB64293-C4CF-4D63-B467-EA928FC384AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB64293-C4CF-4D63-B467-EA928FC384AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB64293-C4CF-4D63-B467-EA928FC384AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DE189A9-360C-440A-AA75-2A8CEABC73D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DE189A9-360C-440A-AA75-2A8CEABC73D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DE189A9-360C-440A-AA75-2A8CEABC73D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DE189A9-360C-440A-AA75-2A8CEABC73D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,11 +11,12 @@ namespace DataAccessLibrary
     public class MongoDBDataAccess
     {
         private IMongoDatabase db;
-        public MongoDBDataAccess(string dbName, MongoClientSettings settings)
+        public MongoDBDataAccess(IMongoDatabase database)
         {
-            var client = new MongoClient(settings);
-            db = client.GetDatabase(dbName);
+            //var client = new MongoClient(settings);
+            //db = client.GetDatabase(dbName);
 
+            db = database;
         }
 
         public void InsertRecord<T>(string table, T record)
